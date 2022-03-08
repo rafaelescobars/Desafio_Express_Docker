@@ -1,0 +1,45 @@
+{{#if todo}}
+  <div class="container my-3">
+    <div>
+      <h1 class="d-flex justify-content-center">
+        Confirmar eliminar tarea personal
+      </h1>
+    </div>
+    <div class="row row-cols-3">
+      <div class="col-md-3">
+        
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="container my-3">
+          <form>
+            <div class="mb-3">
+              <label for="" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="" aria-describedby="" name="nombre" disabled value="{{todo.nombre}}">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Descripción</label>
+              <input type="text" class="form-control" id="" name="descripcion" disabled value="{{todo.descripcion}}">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Fecha</label>
+              <input type="text" class="form-control" id="" name="fecha" disabled value="{{moment date=todo.fecha_creacion format="DD-MM-YYYY"}}">
+            </div>
+            <button type="" class="btn btn-primary" onclick="deleteTodo('{{todo.id}}')">Eliminar</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-3">
+        
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+{{#unless todo}}
+  <div>
+    <h1 class="d-flex justify-content-center">
+      id de tarea personal incorrecto
+    </h1>
+  </div>
+{{/unless}}
+
